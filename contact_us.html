@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Form</title>
+<link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <h1>Contact Form</h1>
+    <form id="contactForm">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="contactNumber">Contact Number:</label><br>
+        <input type="text" id="contactNumber" name="contactNumber" required><br>
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Short Message:</label><br>
+        <textarea id="message" name="message" required></textarea><br>
+        <button type="submit" id="submitBtn">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // prevent the form from submitting normally
+
+            // Get form values
+            var name = document.getElementById("name").value;
+            var contactNumber = document.getElementById("contactNumber").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+
+            // Output user's information to the console
+            console.log("Name: " + name);
+            console.log("Contact Number: " + contactNumber);
+            console.log("Email Address: " + email);
+            console.log("Short Message: " + message);
+
+            // Start timer and redirect after 3 seconds
+            setTimeout(function() {
+                window.location.href = "home.html"; // Replace 'home.html' with your home page URL
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
