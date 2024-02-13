@@ -1,4 +1,4 @@
-// import ‘../node_modules/<package name>/<css file to import>’;
+
 
 
 // If statement to inject the correct text
@@ -8,6 +8,8 @@ if (document.title === 'Product Page') {
   injectAboutUsContent();
 } else if (document.title === 'Services Page') {
   injectServicesContent();
+} else if (document.title === 'Lab 1!') {
+  injectHomeContent();
 }
 
 /* When the user clicks on the button,
@@ -29,6 +31,71 @@ function myFunction() {
       }
     }
   }
+
+
+
+  // Function to inject content into the HTML page
+function injectHomeContent() {
+  // Select the div with id "content"
+  var contentDiv = document.getElementById("content");
+  
+  // Create and append the welcome message
+  var welcomeMessage = document.createElement("h1");
+  welcomeMessage.textContent = "Welcome!";
+  contentDiv.appendChild(welcomeMessage);
+  
+  // Create and append the description
+  var description = document.createElement("h3");
+  description.textContent = "This will be the home page for Lab 1";
+  contentDiv.appendChild(description);
+  
+  // Create and append the authors
+  var authors = document.createElement("h3");
+  authors.textContent = "This lab is done by Chase Barry and Daniel Cameron";
+  contentDiv.appendChild(authors);
+
+  // Create the dropdown container
+  var dropdownContainer = document.createElement("div");
+  dropdownContainer.className = "dropdown";
+
+  // Create the dropdown button
+  var dropdownButton = document.createElement("button");
+  dropdownButton.className = "dropbtn";
+  dropdownButton.textContent = "Dropdown";
+
+  // Create the dropdown content
+  var dropdownContent = document.createElement("div");
+  dropdownContent.className = "dropdown-content";
+
+  // Create an array of links
+  var links = [
+      { text: "Home", href: "./home.html" },
+      { text: "Interests", href: "./products.html" },
+      { text: "Services", href: "./services.html" },
+      { text: "About Us", href: "./about_us.html" },
+      { text: "Human Resources", href: "human_resources.html" },
+      { text: "Contact Us", href: "./contact_us.html" }
+  ];
+
+  // Loop through the links array and create link elements
+  links.forEach(function(link) {
+      var linkElement = document.createElement("a");
+      linkElement.href = link.href;
+      linkElement.textContent = link.text;
+      dropdownContent.appendChild(linkElement);
+  });
+
+  // Append dropdown button and content to the dropdown container
+  dropdownContainer.appendChild(dropdownButton);
+  dropdownContainer.appendChild(dropdownContent);
+
+  // Append the dropdown container to the content div
+  var contentDiv = document.getElementById("content");
+  contentDiv.appendChild(dropdownContainer);
+}
+
+
+
 
 // Function to inject content into the HTML page
 function injectAboutUsContent() {
@@ -104,3 +171,29 @@ function injectServicesContent() {
 }
 
 
+// Function to add a fixed bottom navbar with copyright statement
+function addBottomNavbar() {
+  // Create the navbar container
+  var navbarContainer = document.createElement("nav");
+  navbarContainer.className = "navbar fixed-bottom navbar-dark bg-dark";
+
+  // Create the navbar content
+  var navbarContent = document.createElement("div");
+  navbarContent.className = "container-fluid";
+
+  // Create the copyright statement
+  var copyright = document.createElement("span");
+  copyright.textContent = "Copyright " + new Date().getFullYear() + ", Chase and Daniel";
+
+  // Append the copyright statement to the navbar content
+  navbarContent.appendChild(copyright);
+
+  // Append the navbar content to the navbar container
+  navbarContainer.appendChild(navbarContent);
+
+  // Append the navbar container to the body of the document
+  document.body.appendChild(navbarContainer);
+}
+
+// Call the addBottomNavbar function when the page loads
+window.onload = addBottomNavbar;
