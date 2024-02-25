@@ -197,3 +197,20 @@ function addBottomNavbar() {
 
 // Call the addBottomNavbar function when the page loads
 window.onload = addBottomNavbar;
+
+// function used for login.html
+$(document).ready(function(){
+  // Event listener for form submission
+  $("form").submit(function(event){
+      // Prevent default form submission
+      event.preventDefault();
+      
+      // Retrieve username and password
+      var username = $("#username").val();
+      var password = $("#password").val();
+
+      // Insert username into navbar
+      $("<li class='nav-item navbar-text'>Welcome, " + username + "</li>").insertAfter(".navbar-nav .nav-item:nth-child(2)");
+  });
+});
+
