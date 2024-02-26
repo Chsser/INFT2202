@@ -214,3 +214,61 @@ $(document).ready(function(){
   });
 });
 
+
+// function for register.html
+$(document).ready(function(){
+  // Hide error message div initially
+  $("#ErrorMessage").hide();
+
+  // Event listener for form submission
+  $("form").submit(function(event){
+      // Prevent default form submission
+      event.preventDefault();
+      
+      // Validate first name and last name length
+      var firstName = $("#firstname").val();
+      var lastName = $("#lastname").val();
+      if(firstName.length < 2 || lastName.length < 2) {
+          $("#ErrorMessage").text("First name and last name must be at least 2 characters long.").show();
+          return;
+      }
+
+      // Validate email length and format
+      var email = $("#email").val();
+      if(email.length < 8 || email.indexOf("@") === -1) {
+          $("#ErrorMessage").text("Please enter a valid email address with a minimum length of 8 characters and containing '@'.").show();
+          return;
+      }
+
+      // Validate password length and matching
+      var password = $("#password").val();
+      var confirmPassword = $("#confirmpassword").val();
+      if(password.length < 6 || password !== confirmPassword) {
+          $("#ErrorMessage").text("Passwords must be at least 6 characters long and match.").show();
+          return;
+      }
+
+      // Create an instance of the User class
+      var newUser = new User(firstName, lastName, email, password);
+      
+      // Display user object in console
+      console.log(newUser);
+      
+      // Clear the form
+      $("form")[0].reset();
+
+      // Hide error message div
+      $("#ErrorMessage").hide();
+  });
+});
+
+// User Class 
+class User {
+  constructor(firstName, lastName, username, email, password) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.username = username;
+      this.email = email;
+      this.password = password;
+  }
+}

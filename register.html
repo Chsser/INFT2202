@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- CSS Stylesheet -->
+<link rel="stylesheet" href="./style/style.css">
+<!-- Google Fonts: Aboreto, Montserrat -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Montserrat&display=swap" rel="stylesheet">
+<title>Register Page</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./scripts/app.js"></script>
+</head>
+<body>
+    <form action="" method="post">
+        <h1>Register</h1>
+        <h3>Create your own account, its free!</h3>
+        <label for="firstname">First Name:</label><br>
+        <input type="text" id="firstname" name="firstname" required><br>
+        <label for="lastname">Last Name:</label><br>
+        <input type="text" id="lastname" name="lastname" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <label for="confirmpassword">Confirm Password:</label><br>
+        <input type="password" id="confirmpassword" name="confirmpassword" required><br>
+        <input type="submit" value="Register">
+    </form>
+    <!-- Error message div -->
+    <div id="ErrorMessage"></div>
+</body>
+</html>
