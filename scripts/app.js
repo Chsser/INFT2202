@@ -1,5 +1,8 @@
-
-
+/*
+Names: Chase Barry (100751425) and Daniel Cameron (100787848)
+Date: March 15, 2024
+File: app.js
+*/
 
 // If statement to inject the correct text
 if (document.title === 'Product Page') {
@@ -251,8 +254,8 @@ $(document).ready(function(){
       // Create an instance of the User class
       var newUser = new User(firstName, lastName, email, password);
       
-      // Display user object in console
-      console.log(newUser);
+      // // Display user object in console
+      // console.log(newUser);
       
       // Clear the form
       $("form")[0].reset();

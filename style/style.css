@@ -14,7 +14,6 @@
     text-shadow: #333 0 1px 0;
 }
 
-
 .large {
     font-size: 125%;
 }
@@ -90,6 +89,7 @@ html {
 body {
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
+    background-color: #000000;
 }
 
 .clear {
@@ -189,3 +189,22 @@ h2 {
   .dropdown:hover .dropbtn {background-color: #3e8e41;} 
 
 /*# sourceMappingURL=style.css.map */
+
+
+  /* Blog CSS */
+  .card {
+    background-color: #000;
+    color: #99BC85; 
+    
+  }
+  .container {
+    color: #80BCBD;
+  }
+  .text-center{
+    font: bold;
+    color: #80BCBD;
+  }
+
+  .blog-body {
+    color: #99BC85;
+  }
